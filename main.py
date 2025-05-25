@@ -29,12 +29,12 @@ async def handle_jd(message: types.Message):
     if doc_generator(tailored_data) :
         #send the document
         resume = FSInputFile(r"./docs/Tailored_Resume.docx")
-        await message.reply_document(document=resume)
+        await message.answer_document(document=resume)
 
 @dp.message(Command(commands=["resume" , "df"]))
 async def handle_resume(message: types.Message):
     resume = FSInputFile(r"./docs/default_doc/K SAI CHARAN_Fresher.pdf")
-    await message.reply_document(document=resume)
+    await message.answer_document(document=resume)
 
 
 # Main entry point
