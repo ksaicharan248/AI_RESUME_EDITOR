@@ -1,18 +1,11 @@
 from typing import Tuple
-from pydantic import BaseModel
 from google import genai
 from typing import List
-from ..data.keys import AI_API_KEY as AI_API_KEY
+from data.prompt import get_prompt
+from data.keys import AI_API_KEY
 import json
 
-class Skills(BaseModel):
-    languages: List[str]
-    technologies: List[str]
-    tools: List[str]
 
-class ResumeOutput(BaseModel):
-    summary: str
-    skills: Skills
 
 # Initialize the Gemini client once
 client = genai.Client(api_key=AI_API_KEY)
