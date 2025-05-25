@@ -2,7 +2,6 @@ from docx import Document
 from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 import ast
-from data.jd import job_description
 from data.reume import rdata
 # ==== Load tailored AI response ====
 

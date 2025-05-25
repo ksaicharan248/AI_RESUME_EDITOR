@@ -2,7 +2,7 @@ from typing import Tuple
 from pydantic import BaseModel
 from google import genai
 from typing import List
-from ..data.keys import AI_API_KEY as AI_API_KEY
+from ..keys import AI_API_KEY
 import json
 
 class Skills(BaseModel):

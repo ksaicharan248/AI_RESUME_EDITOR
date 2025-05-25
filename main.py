@@ -1,5 +1,3 @@
-import data
-API_KEY = data.keys.Telegram_API_KEY
 from utlis.genrator import generate_resume_summary_and_skills
 from data.reume import rdata
 from utlis.docgenrator import doc_generator
@@ -8,8 +6,8 @@ import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import FSInputFile
-
-API_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+from keys import TELEGRAM_API_KEY
+API_TOKEN = TELEGRAM_API_KEY
 
 logging.basicConfig(level=logging.INFO)
 
