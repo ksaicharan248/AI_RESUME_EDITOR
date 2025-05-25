@@ -1,4 +1,5 @@
-API_KEY = "7613780951:AAF_D-iQjseLS-_QmUh5Nmh6FIAQGa8eZDs"
+import data
+API_KEY = data.keys.Telegram_API_KEY
 from utlis.genrator import generate_resume_summary_and_skills
 from data.reume import rdata
 from utlis.docgenrator import doc_generator

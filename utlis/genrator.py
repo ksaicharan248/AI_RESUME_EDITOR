@@ -2,6 +2,7 @@ from typing import Tuple
 from pydantic import BaseModel
 from google import genai
 from typing import List
+import data
 from data.prompt import get_prompt
 import json
 
@@ -15,7 +16,7 @@ class ResumeOutput(BaseModel):
     skills: Skills
 
 # Initialize the Gemini client once
-client = genai.Client(api_key="AIzaSyAwLnOXUclNGmO33OY6Jlx_rzY19S_gyco")
+client = genai.Client(api_key=data.keys.AI_API_KEY)
 
 def generate_resume_summary_and_skills(resume_data: str, job_description_data: str) -> dict[str, dict[str, List[str]]]:
     prompt = get_prompt(job_description_data, resume_data)
