@@ -18,8 +18,6 @@ dp = Dispatcher()
 
 @dp.message(Command(commands=["start", "help"]))
 async def send_welcome(message: types.Message):
-    full_text = message.text.strip("/help")
-    await message.answer(f"Received command: {full_text}")
     # await message.answer("Hi! I'm a Telegram bot that generates tailored summaries and skills for resumes based on job descriptions.")
     await message.reply("Send me a job description (JD), and I'll generate a tailored summary and skills for you!")
 
@@ -32,7 +30,6 @@ async def handle_jd(message: types.Message):
         #send the document
         resume = FSInputFile(r"./docs/Tailored_Resume.docx")
         await message.reply_document(document=resume)
-        await message.reply("Resume generated successfully!")
 
 @dp.message(Command(commands=["resume" , "df"]))
 async def handle_resume(message: types.Message):
