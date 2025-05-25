@@ -14,7 +14,7 @@ from data.reume import rdata
 def doc_generator(tailored_data):
     summary = tailored_data["summary"]
     skills = tailored_data["skills"]
-    doc = Document(r"C:\Users\saich\Documents\resume_files\K SAI CHARAN.docx") # Load the resume
+    doc = Document(r"./docs/default_doc/K SAI CHARAN.docx") # Load the resume
     # ==== Update Summary (Table 2, Row 2, Cell 0) with 2.5pt spacing ====
     summary_cell = doc.tables[1].rows[1].cells[0]
     summary_cell.text = ""  # Clear old content
