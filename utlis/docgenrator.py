@@ -11,7 +11,7 @@ from data.reume import rdata
 
 
 
-def doc_generator(tailored_data):
+def doc_generator(tailored_data , job_title):
     summary = tailored_data["summary"]
     skills = tailored_data["skills"]
     doc = Document(r"./docs/default_doc/K SAI CHARAN.docx") # Load the resume
@@ -56,9 +56,8 @@ def doc_generator(tailored_data):
     p3.paragraph_format.space_before = Pt(3)
     p3.paragraph_format.space_after = Pt(3)
     p3.alignment = WD_ALIGN_PARAGRAPH.LEFT
-
+    doc.save(rf"./docs/K_Sai_Charan_{job_title}.docx")
     # ==== Save the updated resume ====
-    doc.save(r"./docs/Tailored_Resume.docx")
     return True
 
 
