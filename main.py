@@ -59,10 +59,33 @@ async def handle_resume(message: types.Message):
 
 @dp.message(Command(commands=["add"]))
 async def handle_add(message: types.Message):
-
-    msg = "First Name : \n `Sai ` \n\nmiddele Name : \n `Charan` \n\nLast Name : \n `K` \n\nEmail : \n `saicharanreddy141458@gmail.com` \n\nMobile Number : \n `+91 9014145839` \n\nAddress line1 : \n `25, THRIDHAMNE, JAI BHUNESHWARI LAYOUT, `\n\nAddress line2 : \n `Vidya Nagar, kr Puram , Bengaluru` \n\nPin Code : \n `560036` \n\nCity : \n `Bengaluru` \n\nState : \n `Karnataka` \n\nCountry : \n `India`"
-    await message.answer(msg)
-
+    msg = (
+        "First Name : \n"
+        "`Sai`\n\n"
+        "Middle Name : \n"
+        "`Charan`\n\n"
+        "Last Name : \n"
+        "`K`\n\n"
+        "Email : \n"
+        "`saicharanreddy141458@gmail.com`\n\n"
+        "Mobile Number : \n"
+        "`+91 9014145839`\n\n"
+        "Address line1 : \n"
+        "`25, THRIDHAMNE, JAI BHUNESHWARI LAYOUT,`\n\n"
+        "Address line2 : \n"
+        "`Vidya Nagar, Krishnarajapuram, Bengaluru`\n\n"
+        "Address line3 : \n"
+        "`Near Cambridge institute of technology, Karnataka - 560036`\n\n"
+        "Pin Code : \n"
+        "`560036`\n\n"
+        "City : \n"
+        "`Bengaluru`\n\n"
+        "State : \n"
+        "`Karnataka`\n\n"
+        "Country : \n"
+        "`India`"
+    )
+    await message.answer(msg, parse_mode="MarkdownV2")
 
 
 
