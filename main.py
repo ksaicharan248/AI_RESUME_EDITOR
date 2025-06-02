@@ -57,6 +57,15 @@ async def handle_resume(message: types.Message):
     resume = FSInputFile(r"./docs/default_doc/K SAI CHARAN_Fresher.pdf")
     await message.answer_document(document=resume, caption="📄 Here's the default resume.")
 
+@dp.message(Command(commands=["add"]))
+async def handle_add(message: types.Message):
+
+    msg = "First Name : \n `Sai ` \n\nmiddele Name : \n `Charan` \n\nLast Name : \n `K` \n\nEmail : \n `saicharanreddy141458@gmail.com` \n\nMobile Number : \n `+91 9014145839` \n\nAddress line1 : \n `25, THRIDHAMNE, JAI BHUNESHWARI LAYOUT, `\n\nAddress line2 : \n `Vidya Nagar, kr Puram , Bengaluru` \n\nPin Code : \n `560036` \n\nCity : \n `Bengaluru` \n\nState : \n `Karnataka` \n\nCountry : \n `India`"
+    await message.answer(msg)
+
+
+
+
 # 🟢 Main entry
 async def main():
     await dp.start_polling(bot)
