@@ -87,7 +87,20 @@ async def handle_add(message: types.Message):
     )
     await message.answer(msg, parse_mode="MarkdownV2")
 
-
+@dp.message(Command(commands=["edu"]))
+async def handle_edu(message: types.Message):
+    msg = ("`Bachlor of Technology in Electronics and Communication Engineering`\n\n"
+           "`Sreenivasa Institute of Technology and Management Studies`\n\n"
+           "`2020 - 2024`\n\n"
+           "`CGPA: 8.24/10`\n\n"
+           "`Intermediate`]\n\n"
+           "`State Board`\n\n"
+           "`Sri Chaitanya Junior College`\n\n"
+           "`CGPA: 9.01/10`\n\n"
+           "`Class 10th`\n\n"
+           "`Sri Chaitanya Techno School`\n\n"
+           "`CGPA: 9.7/10`")
+    await message.answer(msg, parse_mode="MarkdownV2")
 
 # 🟢 Main entry
 async def main():
