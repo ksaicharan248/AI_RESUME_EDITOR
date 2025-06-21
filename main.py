@@ -124,6 +124,12 @@ async def handle_unblock(message:types.Message):
             await message.answer("🔴 Failed to unblock")
 
 
+@dp.message(Command(commands=["link"]))
+async def handle_link(message:types.Message):
+    if message:
+        await message.answer("https://sai-charan-portfolio.vercel.app/")
+
+
 
 # 🟢 Main entry
 async def main():
