@@ -127,7 +127,7 @@ async def handle_unblock(message:types.Message):
 @dp.message(Command(commands=["link"]))
 async def handle_link(message:types.Message):
     if message:
-        await message.answer("https://sai-charan-portfolio.vercel.app/")
+        await message.answer("https://sai-charan-portfolio.vercel.app/",disable_web_page_preview=False)
 
 
 
