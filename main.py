@@ -1,6 +1,7 @@
 import os
 import asyncio
 import logging
+import requests
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import FSInputFile
@@ -101,6 +102,28 @@ async def handle_edu(message: types.Message):
            "`Sri Chaitanya Techno School`\n\n"
            "`CGPA: 9.7/10`")
     await message.answer(msg, parse_mode="MarkdownV2")
+
+@dp.message(Command(commands=["block"]))
+async def handle_block(message:types.Message):
+    if message:
+        response = requests.get("https://trigger.macrodroid.com/75b4c80d-729e-4b11-9f5c-22646225ef32/call")
+        if response.status_code == 200 and response.text == "OK":
+            await message.answer("🟢 Successfully blocked")
+        else:
+            await message.answer("🔴 Failed to block")
+
+
+
+@dp.message(Command(commands=["unblock"]))
+async def handle_unblock(message:types.Message):
+    if message:
+        response = requests.get("https://trigger.macrodroid.com/75b4c80d-729e-4b11-9f5c-22646225ef32/disable")
+        if response.status_code == 200 and response.text == "OK":
+            await message.answer("🟢 Successfully unblocked")
+        else:
+            await message.answer("🔴 Failed to unblock")
+
+
 
 # 🟢 Main entry
 async def main():
